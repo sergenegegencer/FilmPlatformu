@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "Anasayfa";
+}
+
+<div class="container mt-5">
+    <div class="text-center">
+        <h1 class="display-4">🎬 Film Platformu'na Hoş Geldiniz</h1>
+        <p class="lead">Favori filmlerinizi keşfedin, yorum yapın, puan verin ve listelerinizi oluşturun.</p>
+
+        @if (!User.Identity.IsAuthenticated)
+        {
+            <div class="mt-4">
+                <a asp-area="Identity" asp-page="/Account/Login" class="btn btn-primary btn-lg me-2">Giriş Yap</a>
+                <a asp-area="Identity" asp-page="/Account/Register" class="btn btn-outline-light btn-lg">Kayıt Ol</a>
+            </div>
+        }
+        else if (User.IsInRole("Admin"))
+        {
+            <div class="mt-4">
+                <a asp-controller="Admin" asp-action="Panel" class="btn btn-warning btn-lg">🔧 Admin Paneli</a>
+            </div>
+        }
+        else if (User.IsInRole("User"))
+        {
+            <div class="mt-4">
+                <a asp-controller="User" asp-action="Panel" class="btn btn-success btn-lg">🎥 Filmleri Görüntüle</a>
+            </div>
+        }
+    </div>
+</div>
