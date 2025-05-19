@@ -1,0 +1,79 @@
+﻿@model Film
+
+<div class="container mt-4">
+    <h2>@Model.Title</h2>
+
+    @if (!string.IsNullOrEmpty(Model.PosterUrl))
+    {
+        <img src="@Model.PosterUrl" width="250" class="mb-3" />
+    }
+
+    @if (!string.IsNullOrEmpty(Model.Overview))
+    {
+        <p><strong>Konusu:</strong> @Model.Overview</p>
+    }
+
+    <ul class="list-group mb-3">
+        @if (!string.IsNullOrEmpty(Model.ReleaseDate))
+        {
+            <li class="list-group-item"><strong>Çıkış Tarihi:</strong> @Model.ReleaseDate</li>
+        }
+        @if (Model.Runtime.HasValue)
+        {
+            <li class="list-group-item"><strong>Süre:</strong> @Model.Runtime dakika</li>
+        }
+        @if (!string.IsNullOrEmpty(Model.OriginalLanguage))
+        {
+            <li class="list-group-item"><strong>Dil:</strong> @Model.OriginalLanguage.ToUpper()</li>
+        }
+        @if (!string.IsNullOrEmpty(Model.Genres))
+        {
+            <li class="list-group-item"><strong>Tür:</strong> @Model.Genres</li>
+        }
+    </ul>
+
+    @if (User.Identity != null && User.Identity.IsAuthenticated)
+    {
+        <form asp-action="AddToWatchlist" asp-controller="Film" method="post" class="mb-3">
+            <input type="hidden" name="tmdbId" value="@Model.TMDBId" />
+            <button type="submit" class="btn btn-warning">📌 Watchlist'e Ekle</button>
+        </form>
+    }
+
+    <hr />
+    <h4>Yorumlar</h4>
+
+    @if (Model.Reviews != null && Model.Reviews.Any())
+    {
+        @foreach (var review in Model.Reviews.OrderByDescending(r => r.Date))
+        {
+            <div class="card mb-2">
+                <div class="card-body">
+                    <h6 class="card-subtitle mb-1 text-muted">
+                        <strong>@review.UserName</strong> (@review.Rating/10) – @review.Date.ToShortDateString()
+                    </h6>
+                    @if (!string.IsNullOrWhiteSpace(review.Comment))
+                    {
+                        <p class="card-text">@review.Comment</p>
+                    }
+
+                </div>
+            </div>
+        }
+    }
+    else
+    {
+        <p class="text-muted">Bu film için henüz yorum yapılmamış.</p>
+    }
+
+    <form asp-action="SaveAndReview" asp-controller="Film" method="post" class="mb-5">
+        <input type="hidden" name="tmdbId" value="@Model.TMDBId" />
+        <div class="mb-2">
+            <input type="number" name="rating" class="form-control" placeholder="Puan (1-10)" min="1" max="10" required />
+        </div>
+        <div class="mb-2">
+            <textarea name="comment" class="form-control" placeholder="Yorum" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-success">Kaydet ve Gönder</button>
+    </form>
+</div>

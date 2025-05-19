@@ -1,0 +1,28 @@
+﻿@model Film
+
+<h2>@Model.Title</h2>
+
+@if (!string.IsNullOrEmpty(Model.PosterUrl))
+{
+    <img src="@Model.PosterUrl" width="250" />
+}
+
+<hr />
+
+<h3>Yorum Ekle</h3>
+<form asp-action="AddReview" method="post">
+    <input type="hidden" name="filmId" value="@Model.Id" />
+    <input type="number" name="rating" min="1" max="10" placeholder="Puan" required />
+    <textarea name="comment" placeholder="Yorum" required></textarea>
+    <button type="submit">Gönder</button>
+</form>
+
+<h3>Yorumlar</h3>
+@foreach (var review in Model.Reviews ?? new List<Review>())
+{
+    <div>
+        <strong>@review.UserName</strong> (@review.Rating/10) – @review.Date.ToShortDateString()
+        <p>@review.Comment</p>
+    </div>
+}
+

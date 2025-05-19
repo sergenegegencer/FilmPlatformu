@@ -1,0 +1,313 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\User\\source\\repos\\FilmPlatformu\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{FAAFD148-91E1-42DF-A9CC-2DC923F445FE}|FilmPlatformu\\FilmPlatformu.csproj|c:\\users\\user\\source\\repos\\filmplatformu\\filmplatformu\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FAAFD148-91E1-42DF-A9CC-2DC923F445FE}|FilmPlatformu\\FilmPlatformu.csproj|solutionrelative:filmplatformu\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FAAFD148-91E1-42DF-A9CC-2DC923F445FE}|FilmPlatformu\\FilmPlatformu.csproj|c:\\users\\user\\source\\repos\\filmplatformu\\filmplatformu\\views\\film\\tmdbdetail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FAAFD148-91E1-42DF-A9CC-2DC923F445FE}|FilmPlatformu\\FilmPlatformu.csproj|solutionrelative:filmplatformu\\views\\film\\tmdbdetail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FAAFD148-91E1-42DF-A9CC-2DC923F445FE}|FilmPlatformu\\FilmPlatformu.csproj|c:\\users\\user\\source\\repos\\filmplatformu\\filmplatformu\\controllers\\filmcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FAAFD148-91E1-42DF-A9CC-2DC923F445FE}|FilmPlatformu\\FilmPlatformu.csproj|solutionrelative:filmplatformu\\controllers\\filmcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FAAFD148-91E1-42DF-A9CC-2DC923F445FE}|FilmPlatformu\\FilmPlatformu.csproj|c:\\users\\user\\source\\repos\\filmplatformu\\filmplatformu\\models\\review.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FAAFD148-91E1-42DF-A9CC-2DC923F445FE}|FilmPlatformu\\FilmPlatformu.csproj|solutionrelative:filmplatformu\\models\\review.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FAAFD148-91E1-42DF-A9CC-2DC923F445FE}|FilmPlatformu\\FilmPlatformu.csproj|c:\\users\\user\\source\\repos\\filmplatformu\\filmplatformu\\services\\tmdbservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FAAFD148-91E1-42DF-A9CC-2DC923F445FE}|FilmPlatformu\\FilmPlatformu.csproj|solutionrelative:filmplatformu\\services\\tmdbservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FAAFD148-91E1-42DF-A9CC-2DC923F445FE}|FilmPlatformu\\FilmPlatformu.csproj|c:\\users\\user\\source\\repos\\filmplatformu\\filmplatformu\\models\\film.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FAAFD148-91E1-42DF-A9CC-2DC923F445FE}|FilmPlatformu\\FilmPlatformu.csproj|solutionrelative:filmplatformu\\models\\film.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FAAFD148-91E1-42DF-A9CC-2DC923F445FE}|FilmPlatformu\\FilmPlatformu.csproj|c:\\users\\user\\source\\repos\\filmplatformu\\filmplatformu\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FAAFD148-91E1-42DF-A9CC-2DC923F445FE}|FilmPlatformu\\FilmPlatformu.csproj|solutionrelative:filmplatformu\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FAAFD148-91E1-42DF-A9CC-2DC923F445FE}|FilmPlatformu\\FilmPlatformu.csproj|c:\\users\\user\\source\\repos\\filmplatformu\\filmplatformu\\views\\film\\detail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FAAFD148-91E1-42DF-A9CC-2DC923F445FE}|FilmPlatformu\\FilmPlatformu.csproj|solutionrelative:filmplatformu\\views\\film\\detail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FAAFD148-91E1-42DF-A9CC-2DC923F445FE}|FilmPlatformu\\FilmPlatformu.csproj|c:\\users\\user\\source\\repos\\filmplatformu\\filmplatformu\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FAAFD148-91E1-42DF-A9CC-2DC923F445FE}|FilmPlatformu\\FilmPlatformu.csproj|solutionrelative:filmplatformu\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FAAFD148-91E1-42DF-A9CC-2DC923F445FE}|FilmPlatformu\\FilmPlatformu.csproj|c:\\users\\user\\source\\repos\\filmplatformu\\filmplatformu\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FAAFD148-91E1-42DF-A9CC-2DC923F445FE}|FilmPlatformu\\FilmPlatformu.csproj|solutionrelative:filmplatformu\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FAAFD148-91E1-42DF-A9CC-2DC923F445FE}|FilmPlatformu\\FilmPlatformu.csproj|c:\\users\\user\\source\\repos\\filmplatformu\\filmplatformu\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{FAAFD148-91E1-42DF-A9CC-2DC923F445FE}|FilmPlatformu\\FilmPlatformu.csproj|solutionrelative:filmplatformu\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\source\\repos\\FilmPlatformu\\FilmPlatformu\\Data\\Migrations\\20250519143931_AddWatchlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:FilmPlatformu\\Data\\Migrations\\20250519143931_AddWatchlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FAAFD148-91E1-42DF-A9CC-2DC923F445FE}|FilmPlatformu\\FilmPlatformu.csproj|c:\\users\\user\\source\\repos\\filmplatformu\\filmplatformu\\models\\watchlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FAAFD148-91E1-42DF-A9CC-2DC923F445FE}|FilmPlatformu\\FilmPlatformu.csproj|solutionrelative:filmplatformu\\models\\watchlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FAAFD148-91E1-42DF-A9CC-2DC923F445FE}|FilmPlatformu\\FilmPlatformu.csproj|c:\\users\\user\\source\\repos\\filmplatformu\\filmplatformu\\views\\film\\search.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FAAFD148-91E1-42DF-A9CC-2DC923F445FE}|FilmPlatformu\\FilmPlatformu.csproj|solutionrelative:filmplatformu\\views\\film\\search.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\source\\repos\\FilmPlatformu\\FilmPlatformu\\Data\\Migrations\\20250519115320_AddFilmAndReview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:FilmPlatformu\\Data\\Migrations\\20250519115320_AddFilmAndReview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FAAFD148-91E1-42DF-A9CC-2DC923F445FE}|FilmPlatformu\\FilmPlatformu.csproj|c:\\users\\user\\source\\repos\\filmplatformu\\filmplatformu\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FAAFD148-91E1-42DF-A9CC-2DC923F445FE}|FilmPlatformu\\FilmPlatformu.csproj|solutionrelative:filmplatformu\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FAAFD148-91E1-42DF-A9CC-2DC923F445FE}|FilmPlatformu\\FilmPlatformu.csproj|c:\\users\\user\\source\\repos\\filmplatformu\\filmplatformu\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FAAFD148-91E1-42DF-A9CC-2DC923F445FE}|FilmPlatformu\\FilmPlatformu.csproj|solutionrelative:filmplatformu\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 17,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "20250519143931_AddWatchlist.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\FilmPlatformu\\FilmPlatformu\\Data\\Migrations\\20250519143931_AddWatchlist.cs",
+              "RelativeDocumentMoniker": "FilmPlatformu\\Data\\Migrations\\20250519143931_AddWatchlist.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\FilmPlatformu\\FilmPlatformu\\Data\\Migrations\\20250519143931_AddWatchlist.cs",
+              "RelativeToolTip": "FilmPlatformu\\Data\\Migrations\\20250519143931_AddWatchlist.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-19T14:39:31.372Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Watchlist.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\FilmPlatformu\\FilmPlatformu\\Models\\Watchlist.cs",
+              "RelativeDocumentMoniker": "FilmPlatformu\\Models\\Watchlist.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\FilmPlatformu\\FilmPlatformu\\Models\\Watchlist.cs",
+              "RelativeToolTip": "FilmPlatformu\\Models\\Watchlist.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-19T14:38:49.416Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TMDBDetail.cshtml",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\FilmPlatformu\\FilmPlatformu\\Views\\Film\\TMDBDetail.cshtml",
+              "RelativeDocumentMoniker": "FilmPlatformu\\Views\\Film\\TMDBDetail.cshtml",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\FilmPlatformu\\FilmPlatformu\\Views\\Film\\TMDBDetail.cshtml",
+              "RelativeToolTip": "FilmPlatformu\\Views\\Film\\TMDBDetail.cshtml",
+              "ViewState": "AgIAACgAAAAAAAAAAAAAwDIAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-19T13:58:19.53Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\FilmPlatformu\\FilmPlatformu\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "FilmPlatformu\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\FilmPlatformu\\FilmPlatformu\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "FilmPlatformu\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAEMAAAAAAAAAAAAxwAgAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-19T12:31:40.893Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Search.cshtml",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\FilmPlatformu\\FilmPlatformu\\Views\\Film\\Search.cshtml",
+              "RelativeDocumentMoniker": "FilmPlatformu\\Views\\Film\\Search.cshtml",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\FilmPlatformu\\FilmPlatformu\\Views\\Film\\Search.cshtml",
+              "RelativeToolTip": "FilmPlatformu\\Views\\Film\\Search.cshtml",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAwwBwAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-19T12:21:37.579Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\FilmPlatformu\\FilmPlatformu\\Program.cs",
+              "RelativeDocumentMoniker": "FilmPlatformu\\Program.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\FilmPlatformu\\FilmPlatformu\\Program.cs",
+              "RelativeToolTip": "FilmPlatformu\\Program.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAA3wAgAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-19T12:17:57.353Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "TMDBService.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\FilmPlatformu\\FilmPlatformu\\Services\\TMDBService.cs",
+              "RelativeDocumentMoniker": "FilmPlatformu\\Services\\TMDBService.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\FilmPlatformu\\FilmPlatformu\\Services\\TMDBService.cs",
+              "RelativeToolTip": "FilmPlatformu\\Services\\TMDBService.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAA+wCQAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-19T12:14:21.814Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Detail.cshtml",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\FilmPlatformu\\FilmPlatformu\\Views\\Film\\Detail.cshtml",
+              "RelativeDocumentMoniker": "FilmPlatformu\\Views\\Film\\Detail.cshtml",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\FilmPlatformu\\FilmPlatformu\\Views\\Film\\Detail.cshtml",
+              "RelativeToolTip": "FilmPlatformu\\Views\\Film\\Detail.cshtml",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAIwBEAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-19T11:58:23.261Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FilmController.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\FilmPlatformu\\FilmPlatformu\\Controllers\\FilmController.cs",
+              "RelativeDocumentMoniker": "FilmPlatformu\\Controllers\\FilmController.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\FilmPlatformu\\FilmPlatformu\\Controllers\\FilmController.cs",
+              "RelativeToolTip": "FilmPlatformu\\Controllers\\FilmController.cs",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAowDwAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-19T11:55:04.121Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "20250519115320_AddFilmAndReview.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\FilmPlatformu\\FilmPlatformu\\Data\\Migrations\\20250519115320_AddFilmAndReview.cs",
+              "RelativeDocumentMoniker": "FilmPlatformu\\Data\\Migrations\\20250519115320_AddFilmAndReview.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\FilmPlatformu\\FilmPlatformu\\Data\\Migrations\\20250519115320_AddFilmAndReview.cs",
+              "RelativeToolTip": "FilmPlatformu\\Data\\Migrations\\20250519115320_AddFilmAndReview.cs",
+              "ViewState": "AgIAADQAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-19T11:53:20.957Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\FilmPlatformu\\FilmPlatformu\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "FilmPlatformu\\Data\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\FilmPlatformu\\FilmPlatformu\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "FilmPlatformu\\Data\\ApplicationDbContext.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAqwBAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-19T11:46:28.56Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Review.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\FilmPlatformu\\FilmPlatformu\\Models\\Review.cs",
+              "RelativeDocumentMoniker": "FilmPlatformu\\Models\\Review.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\FilmPlatformu\\FilmPlatformu\\Models\\Review.cs",
+              "RelativeToolTip": "FilmPlatformu\\Models\\Review.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-19T11:45:52.373Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Film.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\FilmPlatformu\\FilmPlatformu\\Models\\Film.cs",
+              "RelativeDocumentMoniker": "FilmPlatformu\\Models\\Film.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\FilmPlatformu\\FilmPlatformu\\Models\\Film.cs",
+              "RelativeToolTip": "FilmPlatformu\\Models\\Film.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAzwAwAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-19T11:45:23.949Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\FilmPlatformu\\FilmPlatformu\\appsettings.json",
+              "RelativeDocumentMoniker": "FilmPlatformu\\appsettings.json",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\FilmPlatformu\\FilmPlatformu\\appsettings.json",
+              "RelativeToolTip": "FilmPlatformu\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-05-19T11:32:00.398Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\FilmPlatformu\\FilmPlatformu\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "FilmPlatformu\\Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\FilmPlatformu\\FilmPlatformu\\Controllers\\UserController.cs",
+              "RelativeToolTip": "FilmPlatformu\\Controllers\\UserController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-19T11:23:25.109Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\FilmPlatformu\\FilmPlatformu\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "FilmPlatformu\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\FilmPlatformu\\FilmPlatformu\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "FilmPlatformu\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-19T11:23:23.541Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\FilmPlatformu\\FilmPlatformu\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "FilmPlatformu\\Controllers\\AdminController.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\FilmPlatformu\\FilmPlatformu\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "FilmPlatformu\\Controllers\\AdminController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-19T11:23:18.906Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

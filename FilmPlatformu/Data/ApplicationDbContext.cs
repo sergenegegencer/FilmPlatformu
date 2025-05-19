@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using FilmPlatformu.Models;
 
 namespace FilmPlatformu.Data
 {
@@ -9,5 +10,10 @@ namespace FilmPlatformu.Data
             : base(options)
         {
         }
+
+        public DbSet<Film> Films { get; set; }
+        public DbSet<Review> Reviews { get; set; }
+        public DbSet<Watchlist> Watchlists { get; set; }
+
     }
 }

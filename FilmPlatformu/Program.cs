@@ -2,7 +2,7 @@ using FilmPlatformu.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using FilmPlatformu.Data; // kendi namespace'inle de�i�tir
+using FilmPlatformu.Data; // kendi namespace'inle degistir
 
 public class Program
 {
@@ -37,6 +37,8 @@ public class Program
 
 
         builder.Services.AddControllersWithViews();
+
+        builder.Services.AddHttpClient<TMDBService>();
 
         var app = builder.Build();
 

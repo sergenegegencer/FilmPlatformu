@@ -16,7 +16,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FilmPlatformu")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+143f0bbb0fb43708bc7634df9e13a8191287cae2")]
 [assembly: System.Reflection.AssemblyProductAttribute("FilmPlatformu")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FilmPlatformu")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
