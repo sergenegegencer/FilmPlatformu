@@ -18,6 +18,20 @@
         {
             <div class="mt-4">
                 <a asp-controller="Admin" asp-action="Panel" class="btn btn-warning btn-lg">🔧 Admin Paneli</a>
+
+                <form asp-controller="Admin" asp-action="CleanDuplicateReviews" method="post" class="mt-3">
+                    <button type="submit" class="btn btn-danger">🧹 Tekrar Eden Yorumları Temizle</button>
+                </form>
+
+                @if (TempData["CleanResult"] != null)
+                {
+                    <div class="alert alert-success mt-2">@TempData["CleanResult"]</div>
+                }
+
+                <form asp-controller="Admin" asp-action="DeleteAllReviews" method="post" class="mt-2">
+                    <button type="submit" class="btn btn-danger">❌ Tüm Yorumları Sil</button>
+                </form>
+
             </div>
         }
         else if (User.IsInRole("User"))

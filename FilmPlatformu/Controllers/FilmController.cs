@@ -88,6 +88,7 @@ namespace FilmPlatformu.Controllers
         [HttpPost]
         public async Task<IActionResult> SaveAndReview(int tmdbId, string comment, int rating)
         {
+            var userId = _userManager.GetUserId(User);
             var userName = User.Identity?.Name ?? "Anonim";
 
             // Film DB'de var mı kontrol et
@@ -106,24 +107,23 @@ namespace FilmPlatformu.Controllers
                 await _context.SaveChangesAsync();
             }
 
-            // Aynı kullanıcı bu filme daha önce yorum yaptı mı?
+            // ✅ Artık UserId ile kontrol yapılıyor
             var existingReview = await _context.Reviews
-                .FirstOrDefaultAsync(r => r.FilmId == film.Id && r.UserName == userName);
+                .FirstOrDefaultAsync(r => r.FilmId == film.Id && r.UserId == userId);
 
             if (existingReview != null)
             {
-                // Güncelle
                 existingReview.Comment = comment;
                 existingReview.Rating = rating;
                 existingReview.Date = DateTime.Now;
             }
             else
             {
-                // Yeni yorum ekle
                 var review = new Review
                 {
                     FilmId = film.Id,
-                    UserName = userName,
+                    UserId = userId!,
+                    UserName = userName!,
                     Rating = rating,
                     Comment = comment,
                     Date = DateTime.Now
@@ -134,9 +134,8 @@ namespace FilmPlatformu.Controllers
 
             await _context.SaveChangesAsync();
 
-            return RedirectToAction("Detail", "Film", new { id = film.Id });
+            return RedirectToAction("DetailByTmdb", "Film", new { tmdbId = film.TMDBId });
         }
-
 
         [HttpPost]
         public async Task<IActionResult> AddToWatchlist(int tmdbId)
