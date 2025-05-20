@@ -27,6 +27,9 @@
                                 <li class="nav-item">
                                     <a class="nav-link" asp-controller="Admin" asp-action="Panel">Admin Paneli</a>
                                 </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" asp-controller="Admin" asp-action="AllReviews">🧾 Yorumları Yönet</a>
+                                </li>
                             }
                             else if (User.IsInRole("User"))
                             {
@@ -34,6 +37,12 @@
                                     <a class="nav-link" asp-controller="User" asp-action="Panel">Kullanıcı Paneli</a>
                                 </li>
                             }
+                            <li class="nav-item">
+                                <a class="nav-link" asp-controller="Film" asp-action="MyWatchlist">🎞 Watchlist’im</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-controller="User" asp-action="MyReviews">Yorumlarım</a>
+                            </li>
                         }
                     </ul>
 
@@ -68,10 +77,9 @@
             @RenderBody()
         </main>
     </div>
-
-    <footer class="border-top footer text-muted">
+    <footer class="border-top footer text-muted mt-auto">
         <div class="container">
-            &copy; 2025 - FilmPlatformu - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; 2025 - FilmPlatformu - <a asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

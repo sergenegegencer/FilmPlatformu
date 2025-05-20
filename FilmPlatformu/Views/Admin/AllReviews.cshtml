@@ -1,0 +1,51 @@
+﻿@model List<Review>
+
+<div class="container mt-4">
+    <h2>🧾 Tüm Kullanıcı Yorumları</h2>
+
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            @TempData["SuccessMessage"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+    }
+
+    @if (Model.Count == 0)
+    {
+        <p class="text-muted">Hiç yorum yapılmamış.</p>
+    }
+    else
+    {
+        <table class="table table-striped table-bordered">
+            <thead class="table-dark">
+                <tr>
+                    <th>🎬 Film</th>
+                    <th>👤 Kullanıcı</th>
+                    <th>⭐ Puan</th>
+                    <th>💬 Yorum</th>
+                    <th>📅 Tarih</th>
+                    <th>🗑 İşlem</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var review in Model)
+                {
+                    <tr>
+                        <td>@review.Film?.Title</td>
+                        <td>@review.UserName</td>
+                        <td>@review.Rating</td>
+                        <td>@review.Comment</td>
+                        <td>@review.Date.ToShortDateString()</td>
+                        <td>
+                            <form asp-action="DeleteReview" method="post">
+                                <input type="hidden" name="id" value="@review.Id" />
+                                <button type="submit" class="btn btn-sm btn-danger">Sil</button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+</div>

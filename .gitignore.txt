@@ -3,4 +3,6 @@ bin/
 obj/
 *.user
 *.suo
-*.cache
+*.pdb
+*.exe
+*.dll

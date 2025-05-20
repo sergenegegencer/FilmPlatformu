@@ -1,0 +1,40 @@
+﻿@model List<Review>
+
+<div class="container mt-4">
+    <h2>💬 Yorum Yaptığınız Filmler</h2>
+
+    @if (Model.Count == 0)
+    {
+        <p class="text-muted">Henüz hiçbir filme yorum yapmadınız.</p>
+    }
+    else
+    {
+        <div class="row row-cols-1 row-cols-md-2 g-4">
+            @foreach (var review in Model)
+            {
+                <div class="col">
+                    <div class="card h-100 shadow-sm">
+                        @if (!string.IsNullOrEmpty(review.Film?.PosterUrl))
+                        {
+                            <img src="@review.Film.PosterUrl" class="card-img-top" alt="@review.Film.Title" />
+                        }
+
+                        <div class="card-body">
+                            <h5 class="card-title">@review.Film?.Title</h5>
+                            <p class="mb-1"><strong>Puan:</strong> @review.Rating / 10</p>
+                            <p class="text-muted mb-1"><small>@review.Date.ToShortDateString()</small></p>
+                            @if (!string.IsNullOrWhiteSpace(review.Comment))
+                            {
+                                <p>@review.Comment</p>
+                            }
+
+                            <a asp-controller="Film" asp-action="DetailByTmdb" asp-route-tmdbId="@review.Film.TMDBId"
+                               class="btn btn-sm btn-primary">Detay</a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+</div>
+

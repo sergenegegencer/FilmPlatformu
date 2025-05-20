@@ -38,16 +38,45 @@ namespace FilmPlatformu.Controllers
 
         public async Task<IActionResult> DetailByTmdb(int tmdbId)
         {
+            var userId = _userManager.GetUserId(User);
+
             var film = await _context.Films
                 .Include(f => f.Reviews)
                 .FirstOrDefaultAsync(f => f.TMDBId == tmdbId);
 
-            if (film != null)
+            if (film == null)
             {
-                return View("TmdbDetail", film);
+                var filmFromApi = await _tmdb.GetFilmByIdAsync(tmdbId);
+                film = filmFromApi;
             }
-            var filmFromApi = await _tmdb.GetFilmByIdAsync(tmdbId);
-            return View("TmdbDetail", filmFromApi);
+            else if (string.IsNullOrEmpty(film.Overview) || string.IsNullOrEmpty(film.ReleaseDate))
+            {
+                var filmFromApi = await _tmdb.GetFilmByIdAsync(tmdbId);
+
+                film.Overview = filmFromApi.Overview;
+                film.ReleaseDate = filmFromApi.ReleaseDate;
+                film.Runtime = filmFromApi.Runtime;
+                film.OriginalLanguage = filmFromApi.OriginalLanguage;
+                film.Genres = filmFromApi.Genres;
+
+                _context.Films.Update(film);
+                await _context.SaveChangesAsync();
+            }
+
+            bool isInWatchlist = false;
+            if (userId != null && film.Id != 0)
+            {
+                isInWatchlist = await _context.Watchlists
+                    .AnyAsync(w => w.UserId == userId && w.FilmId == film.Id);
+            }
+
+            var vm = new FilmDetailViewModel
+            {
+                Film = film,
+                IsInWatchlist = isInWatchlist
+            };
+
+            return View("TmdbDetail", vm);
         }
 
 
@@ -100,7 +129,12 @@ namespace FilmPlatformu.Controllers
                 {
                     TMDBId = tmdbId,
                     Title = filmFromApi.Title,
-                    PosterUrl = filmFromApi.PosterUrl
+                    PosterUrl = filmFromApi.PosterUrl,
+                    Overview = filmFromApi.Overview,
+                    Runtime = filmFromApi.Runtime,
+                    Genres = filmFromApi.Genres,
+                    ReleaseDate = filmFromApi.ReleaseDate,
+                    OriginalLanguage = filmFromApi.OriginalLanguage
                 };
 
                 _context.Films.Add(film);
@@ -172,7 +206,51 @@ namespace FilmPlatformu.Controllers
                 await _context.SaveChangesAsync();
             }
 
-            return RedirectToAction("Detail", new { id = film.Id });
+            return RedirectToAction("DetailByTmdb", new { tmdbId = film.TMDBId });
+        }
+
+        public async Task<IActionResult> MyWatchlist()
+        {
+            var userId = _userManager.GetUserId(User);
+            if (userId == null) return Unauthorized();
+
+            var watchlist = await _context.Watchlists
+                .Include(w => w.Film)
+                .Where(w => w.UserId == userId)
+                .Select(w => w.Film!)
+                .ToListAsync();
+
+            return View("Watchlist", watchlist);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> RemoveFromWatchlist(int tmdbId, string returnTo = "MyWatchlist")
+        {
+            var userId = _userManager.GetUserId(User);
+            if (userId == null)
+                return Unauthorized();
+
+            var film = await _context.Films.FirstOrDefaultAsync(f => f.TMDBId == tmdbId);
+            if (film == null)
+                return NotFound();
+
+            var existing = await _context.Watchlists
+                .FirstOrDefaultAsync(w => w.UserId == userId && w.FilmId == film.Id);
+
+            if (existing != null)
+            {
+                _context.Watchlists.Remove(existing);
+                await _context.SaveChangesAsync();
+
+                TempData["SuccessMessage"] = $"🎞 \"{film.Title}\" watchlist’ten kaldırıldı.";
+            }
+
+            // 🔄 Hangi sayfaya dönüleceğini kontrol et
+            return returnTo switch
+            {
+                "DetailByTmdb" => RedirectToAction("DetailByTmdb", new { tmdbId }),
+                _ => RedirectToAction("MyWatchlist")
+            };
         }
 
 

@@ -1,4 +1,61 @@
-﻿@{
-    ViewData["Title"] = "Kullanıcı Paneli";
-}
-<h2>Kullanıcı Paneli</h2>
+﻿@model UserPanelViewModel
+
+<div class="container mt-4">
+    <h3>🎬 Film Arama</h3>
+
+    <form method="get" class="row g-3 mb-4">
+        <div class="col-md-3">
+            <input type="text" name="query" class="form-control" placeholder="Film adı" value="@Model.Query" />
+        </div>
+        <div class="col-md-2">
+            <input type="text" name="filterGenre" class="form-control" placeholder="Tür (ör. Drama)" value="@Model.FilterGenre" />
+        </div>
+        <div class="col-md-2">
+            <input type="text" name="filterYear" class="form-control" placeholder="Yıl (ör. 2010)" value="@Model.FilterYear" />
+        </div>
+        <div class="col-md-2">
+            <input type="text" name="filterLanguage" class="form-control" placeholder="Dil (ör. en)" value="@Model.FilterLanguage" />
+        </div>
+        <div class="col-md-2">
+            <button type="submit" class="btn btn-primary w-100">Filtrele</button>
+        </div>
+    </form>
+
+    @if (Model.Films.Any())
+    {
+        <div class="row row-cols-1 row-cols-md-4 g-4">
+            @foreach (var film in Model.Films)
+            {
+                <div class="col">
+                    <div class="card h-100 shadow-sm">
+                        <img src="@film.PosterUrl" class="card-img-top" alt="@film.Title" />
+                        <div class="card-body">
+                            <h6 class="card-title">@film.Title</h6>
+                            <a asp-controller="Film" asp-action="DetailByTmdb" asp-route-tmdbId="@film.TMDBId" class="btn btn-sm btn-outline-primary w-100">Detay</a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+    else
+    {
+        <p class="text-muted">Hiçbir film bulunamadı.</p>
+    }
+</div>
+<nav aria-label="Sayfalama" class="mt-4">
+    <ul class="pagination justify-content-center">
+        @for (int i = 1; i <= Model.TotalPages; i++)
+        {
+            var isActive = i == Model.CurrentPage ? "active" : "";
+            <li class="page-item @isActive">
+                <a class="page-link" asp-action="Panel"
+                   asp-route-query="@Model.Query"
+                   asp-route-filterGenre="@Model.FilterGenre"
+                   asp-route-filterYear="@Model.FilterYear"
+                   asp-route-filterLanguage="@Model.FilterLanguage"
+                   asp-route-page="@i">@i</a>
+            </li>
+        }
+    </ul>
+</nav>

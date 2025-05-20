@@ -54,6 +54,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/User/Source/Repos/FilmPlatformu/FilmPlatformu/Views/Admin/AllReviews.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWxsUmV2aWV3cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/User/Source/Repos/FilmPlatformu/FilmPlatformu/Views/Admin/Panel.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFuZWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -68,6 +72,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/User/Source/Repos/FilmPlatformu/FilmPlatformu/Views/Film/TMDBDetail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmlsbVxUTURCRGV0YWlsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/Source/Repos/FilmPlatformu/FilmPlatformu/Views/Film/Watchlist.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmlsbVxXYXRjaGxpc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/User/Source/Repos/FilmPlatformu/FilmPlatformu/Views/Home/Index.cshtml]
@@ -88,6 +96,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/User/Source/Repos/FilmPlatformu/FilmPlatformu/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/Source/Repos/FilmPlatformu/FilmPlatformu/Views/User/MyReviews.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxNeVJldmlld3MuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/User/Source/Repos/FilmPlatformu/FilmPlatformu/Views/User/Panel.cshtml]

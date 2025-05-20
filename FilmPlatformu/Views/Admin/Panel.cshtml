@@ -1,4 +1,183 @@
-﻿@{
-    ViewData["Title"] = "Admin Panel";
+﻿@model AdminPanelViewModel
+@{
+    ViewData["Title"] = "Admin Paneli";
 }
-<h2>Admin Paneli</h2>
+
+<div class="container mt-4">
+    <h2 class="mb-4">🛠 Admin Paneli</h2>
+
+    <ul class="nav nav-tabs" id="adminTabs" role="tablist">
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="summary-tab" data-bs-toggle="tab" data-bs-target="#summary" type="button">📊 Genel Bilgiler</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="reviews-tab" data-bs-toggle="tab" data-bs-target="#reviews" type="button">🧾 Yorumlar</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="tmdb-tab" data-bs-toggle="tab" data-bs-target="#tmdb" type="button">🎬 Filmler</button>
+        </li>
+    </ul>
+
+    <div class="tab-content p-3 border border-top-0" id="adminTabContent">
+        <!-- Genel Bilgiler -->
+        <div class="tab-pane fade @(Model.SelectedTab == "summary" ? "show active" : "")" id="summary" role="tabpanel">
+            <h5>📊 Özet</h5>
+            <ul class="list-group">
+                <li class="list-group-item">Toplam kullanıcı: <strong>@Model.TotalUsers</strong></li>
+                <li class="list-group-item">Toplam yorum: <strong>@Model.TotalReviews</strong></li>
+            </ul>
+        </div>
+
+        <!-- Yorumlar -->
+        <div class="tab-pane fade @(Model.SelectedTab == "reviews" ? "show active" : "")" id="reviews" role="tabpanel">
+            <h5>🧾 Tüm Yorumlar</h5>
+            @if (TempData["ReviewDeleted"] != null)
+            {
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    @TempData["ReviewDeleted"]
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                </div>
+            }
+            <form asp-action="Panel" method="get" class="row mb-3">
+                <input type="hidden" name="tab" value="reviews" />
+                <div class="col-md-4">
+                    <input type="text" name="filterUsername" class="form-control" placeholder="Kullanıcı adına göre filtrele"
+                           value="@Model.FilterUsername" />
+                </div>
+                <div class="col-md-4">
+                    <input type="text" name="filterFilmTitle" class="form-control" placeholder="Film adına göre filtrele"
+                           value="@Model.FilterFilmTitle" />
+                </div>
+                <div class="col-md-4">
+                    <button type="submit" class="btn btn-primary">Filtrele</button>
+                    <a asp-action="Panel" asp-route-tab="reviews" class="btn btn-secondary ms-2">Temizle</a>
+                </div>
+            </form>
+            <table class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>Film</th>
+                        <th>Kullanıcı</th>
+                        <th>Puan</th>
+                        <th>Yorum</th>
+                        <th>Tarih</th>
+                        <th>İşlem</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model.AllReviews != null && Model.AllReviews.Any())
+                    {
+                        foreach (var review in Model.AllReviews)
+                        {
+                            <tr>
+                                <td>@review.Film?.Title</td>
+                                <td>@review.UserName</td>
+                                <td>@review.Rating</td>
+                                <td>@review.Comment</td>
+                                <td>@review.Date.ToShortDateString()</td>
+                                <td>
+                                    <form asp-action="DeleteReviewFromPanel" method="post" asp-controller="Admin" class="d-inline">
+                                        <input type="hidden" name="id" value="@review.Id" />
+                                        <button type="submit" class="btn btn-sm btn-danger"
+                                                onclick="return confirm('Yorumu silmek istediğinizden emin misiniz?')">
+                                            Sil
+                                        </button>
+                                    </form>
+                                </td>
+                            </tr>
+                        }
+                    }
+                    else
+                    {
+                        <tr>
+                            <td colspan="6" class="text-muted text-center">Hiç yorum bulunamadı.</td>
+                        </tr>
+                    }
+                </tbody>
+
+            </table>
+        </div>
+
+        <!-- TMDB Filmleri -->
+        <div class="tab-pane fade @(Model.SelectedTab == "tmdb" ? "show active" : "")" id="tmdb" role="tabpanel">
+            <form asp-action="SearchTmdb" method="get" class="row g-2 mb-3">
+                <input type="hidden" name="tab" value="tmdb" />
+                <div class="col-md-2">
+                    <input type="text" name="filterYear" class="form-control" placeholder="Yıl (örn: 2010)"
+                           value="@Model.FilterYear" />
+                </div>
+                <div class="col-md-3">
+                    <input type="text" name="filterGenre" class="form-control" placeholder="Tür (örn: Drama)"
+                           value="@Model.FilterGenre" />
+                </div>
+                <div class="col-md-2">
+                    <input type="text" name="filterLanguage" class="form-control" placeholder="Dil (örn: en)"
+                           value="@Model.FilterLanguage" />
+                </div>
+                <div class="col-md-2 d-grid">
+                    <button type="submit" class="btn btn-primary">Filtrele</button>
+                </div>
+            </form>
+
+            <form asp-action="SearchTmdb" method="get" class="row mb-3">
+                <div class="col-md-10">
+                    <input type="text" name="query" class="form-control" placeholder="Film ara (TMDB)" value="@Context.Request.Query["query"]" />
+                </div>
+                <div class="col-md-2">
+                    <button type="submit" class="btn btn-primary w-100">Ara</button>
+                </div>
+            </form>
+            <h5>🎬 TMDB Popüler Filmler</h5>
+            <div class="row row-cols-1 row-cols-md-4 g-3">
+                @foreach (var film in Model.PopularFilms!)
+                {
+                    <div class="col">
+                        <div class="card h-100 shadow-sm">
+                            <img src="@film.PosterUrl" class="card-img-top" alt="@film.Title" />
+                            <div class="card-body">
+                                <h6 class="card-title">@film.Title</h6>
+                                <a asp-controller="Film" asp-action="DetailByTmdb" asp-route-tmdbId="@film.TMDBId"
+                                   class="btn btn-sm btn-primary w-100">Detay</a>
+                            </div>
+                        </div>
+                    </div>
+                }
+                @if (Model.TotalPages > 1)
+                {
+                    <nav class="mt-4">
+                        <ul class="pagination justify-content-center">
+                            @for (int i = 1; i <= Model.TotalPages; i++)
+                            {
+                                <li class="page-item @(i == Model.CurrentPage ? "active" : "")">
+                                    <a class="page-link"
+                                       asp-action="SearchTmdb"
+                                       asp-controller="Admin"
+                                       asp-route-page="@i"
+                                       asp-route-query="@Model.Query"
+                                       asp-route-filterGenre="@Model.FilterGenre"
+                                       asp-route-filterYear="@Model.FilterYear"
+                                       asp-route-filterLanguage="@Model.FilterLanguage"
+                                       asp-route-tab="tmdb">
+                                        @i
+                                    </a>
+                                </li>
+                            }
+                        </ul>
+                    </nav>
+                }
+
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const tab = urlParams.get('tab') || '@Model.SelectedTab';
+        if (tab) {
+            const trigger = new bootstrap.Tab(document.querySelector(`#${tab}-tab`));
+            trigger?.show();
+        }
+    </script>
+}

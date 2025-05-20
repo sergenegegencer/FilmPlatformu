@@ -1,51 +1,72 @@
-﻿@model Film
+﻿@model FilmDetailViewModel
 
 <div class="container mt-4">
-    <h2>@Model.Title</h2>
+    <h2>@Model.Film.Title</h2>
 
-    @if (!string.IsNullOrEmpty(Model.PosterUrl))
+    @if (TempData["SuccessMessage"] != null)
     {
-        <img src="@Model.PosterUrl" width="250" class="mb-3" />
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            @TempData["SuccessMessage"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
     }
 
-    @if (!string.IsNullOrEmpty(Model.Overview))
+    @if (!string.IsNullOrEmpty(Model.Film.PosterUrl))
     {
-        <p><strong>Konusu:</strong> @Model.Overview</p>
+        <img src="@Model.Film.PosterUrl" width="250" class="mb-3" />
+    }
+
+    @if (!string.IsNullOrEmpty(Model.Film.Overview))
+    {
+        <p><strong>Konusu:</strong> @Model.Film.Overview</p>
     }
 
     <ul class="list-group mb-3">
-        @if (!string.IsNullOrEmpty(Model.ReleaseDate))
+        @if (!string.IsNullOrEmpty(Model.Film.ReleaseDate))
         {
-            <li class="list-group-item"><strong>Çıkış Tarihi:</strong> @Model.ReleaseDate</li>
+            <li class="list-group-item"><strong>Çıkış Tarihi:</strong> @Model.Film.ReleaseDate</li>
         }
-        @if (Model.Runtime.HasValue)
+        @if (Model.Film.Runtime.HasValue)
         {
-            <li class="list-group-item"><strong>Süre:</strong> @Model.Runtime dakika</li>
+            <li class="list-group-item"><strong>Süre:</strong> @Model.Film.Runtime dakika</li>
         }
-        @if (!string.IsNullOrEmpty(Model.OriginalLanguage))
+        @if (!string.IsNullOrEmpty(Model.Film.OriginalLanguage))
         {
-            <li class="list-group-item"><strong>Dil:</strong> @Model.OriginalLanguage.ToUpper()</li>
+            <li class="list-group-item"><strong>Dil:</strong> @Model.Film.OriginalLanguage.ToUpper()</li>
         }
-        @if (!string.IsNullOrEmpty(Model.Genres))
+        @if (!string.IsNullOrEmpty(Model.Film.Genres))
         {
-            <li class="list-group-item"><strong>Tür:</strong> @Model.Genres</li>
+            <li class="list-group-item"><strong>Tür:</strong> @Model.Film.Genres</li>
         }
     </ul>
 
     @if (User.Identity != null && User.Identity.IsAuthenticated)
     {
-        <form asp-action="AddToWatchlist" asp-controller="Film" method="post" class="mb-3">
-            <input type="hidden" name="tmdbId" value="@Model.TMDBId" />
-            <button type="submit" class="btn btn-warning">📌 Watchlist'e Ekle</button>
-        </form>
+        if (Model.IsInWatchlist)
+        {
+            <form asp-action="RemoveFromWatchlist" method="post" class="mt-2">
+                <input type="hidden" name="tmdbId" value="@Model.Film.TMDBId" />
+                <input type="hidden" name="returnTo" value="DetailByTmdb" />
+                <button type="submit" class="btn btn-danger">❌ Watchlist’ten Çıkar</button>
+            </form>
+
+        }
+        else
+        {
+            <form asp-action="AddToWatchlist" method="post" class="mt-2">
+                <input type="hidden" name="tmdbId" value="@Model.Film.TMDBId" />
+                <button type="submit" class="btn btn-warning">📌 Watchlist’e Ekle</button>
+            </form>
+        }
     }
+
 
     <hr />
     <h4>Yorumlar</h4>
 
-    @if (Model.Reviews != null && Model.Reviews.Any())
+    @if (Model.Film.Reviews != null && Model.Film.Reviews.Any())
     {
-        @foreach (var review in Model.Reviews.OrderByDescending(r => r.Date))
+        @foreach (var review in Model.Film.Reviews.OrderByDescending(r => r.Date))
         {
             <div class="card mb-2">
                 <div class="card-body">
@@ -67,7 +88,7 @@
     }
 
     <form asp-action="SaveAndReview" asp-controller="Film" method="post" class="mb-5">
-        <input type="hidden" name="tmdbId" value="@Model.TMDBId" />
+        <input type="hidden" name="tmdbId" value="@Model.Film.TMDBId" />
         <div class="mb-2">
             <input type="number" name="rating" class="form-control" placeholder="Puan (1-10)" min="1" max="10" required />
         </div>
